@@ -53,8 +53,8 @@ export default function Navigation() {
                         <img style={{ width: "30px" }} src="https://static.vecteezy.com/system/resources/previews/010/870/761/original/american-flag-of-united-states-of-america-png.png" alt="eeuu" />
                     </ButtonInput>
                     <ButtonInput>
-                        <Box>
-                            <Text>
+                        <Box fontSize={"14px"}>
+                            <Text fontSize={'12px'}>
                                 Hola, identificate
                             </Text>
                             <Text>
@@ -63,8 +63,8 @@ export default function Navigation() {
                         </Box>
                     </ButtonInput>
                     <ButtonInput>
-                        <Box>
-                            <Text>Devoluciones</Text>
+                        <Box fontSize={"14px"}>
+                            <Text fontSize={'12px'}>Devoluciones</Text>
                             <Text>y Pedidos</Text>
                         </Box>
                     </ButtonInput>
