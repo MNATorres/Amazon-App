@@ -4,20 +4,15 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
     Button,
 } from '@chakra-ui/react';
 
-import React from 'react'
 
 export default function MenuInput() {
     return (
         <Menu>
             <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                Actions
+                Todos
             </MenuButton>
             <MenuList>
                 <MenuItem>Download</MenuItem>

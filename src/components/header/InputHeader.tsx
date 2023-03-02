@@ -3,6 +3,6 @@ import { Input } from '@chakra-ui/react';
 
 export default function InputHeader() {
   return (
-    <Input placeholder='Basic usage' />
+    <Input bg={"white"} placeholder='Buscar Amazon' />
   )
 }
