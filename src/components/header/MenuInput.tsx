@@ -11,8 +11,8 @@ import {
 export default function MenuInput() {
     return (
         <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                Todos
+            <MenuButton borderRightRadius={'0'} w={"20%"} fontSize={"12px"} as={Button} rightIcon={<ChevronDownIcon />}>
+                Smart Home: Iluminación
             </MenuButton>
             <MenuList>
                 <MenuItem>Download</MenuItem>
