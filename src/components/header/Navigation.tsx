@@ -79,8 +79,10 @@ export default function Navigation() {
                         </Box>
                     </ButtonInput>
                     <ButtonInput>
-                        <BsCart4 />
+                        
+                        <BsCart4 style={{fontSize: '20px', margin:'3px'}} />
                         Carrito
+                        
                     </ButtonInput>
                 </Flex>
 
