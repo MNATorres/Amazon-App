@@ -4,7 +4,7 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { BsCaretDownFill } from 'react-icons/bs';
-import ButtonInput from './ButtonInput';
+import ButtonHeader from './ButtonHeader';
 import ShoppingCart from './ShoppingCart';
 import { AiOutlineRight } from "react-icons/ai";
 import { FaRegUser } from "react-icons/fa";
@@ -14,17 +14,17 @@ export default function UserAccount() {
     return (
         <>
             <Box display={{ base: 'none', md: 'none', lg: 'none', xl: 'flex' }}>
-                <ButtonInput >
+                <ButtonHeader >
                     <img style={{ width: "25px", margin: '3px' }} src="https://static.vecteezy.com/system/resources/previews/010/870/761/original/american-flag-of-united-states-of-america-png.png" alt="eeuu" />
                     <Text fontWeight={'bold'} fontSize={'16px'}>
                         ES
                     </Text>
-                    <BsCaretDownFill style={{ fontSize: '10px', color: "#CCCCCC", marginTop: '5px' }} />
-                </ButtonInput>
+                    <BsCaretDownFill style={{ fontSize: '18px', color: "#CCCCCC", marginTop: '5px' }} />
+                </ButtonHeader>
             </Box>
 
             <Box>
-                <ButtonInput>
+                <ButtonHeader>
                     <Box flexDirection={'column'} display={{ base: 'none', md: 'flex', lg: 'flex', xl: 'flex' }} >
                         <Text fontSize={'12px'}>
                             Hola, identificate
@@ -38,20 +38,20 @@ export default function UserAccount() {
                         <Flex alignItems={'center'}>
                             <Text>Identificate</Text>
                             <AiOutlineRight style={{fontSize: '10px', marginTop: '2px'}} />
-                            <FaRegUser style={{fontSize: '21px'}} />
+                            <FaRegUser style={{fontSize: '24px'}} />
                         </Flex>
                     </Box>
 
-                </ButtonInput>
+                </ButtonHeader>
             </Box>
 
             <Box display={{ base: 'none', md: 'none', lg: 'flex', xl: 'flex' }}>
-                <ButtonInput>
+                <ButtonHeader>
                     <Flex flexDirection={'column'}>
                         <Text fontSize={'12px'}>Devoluciones</Text>
                         <Text>y Pedidos</Text>
                     </Flex>
-                </ButtonInput>
+                </ButtonHeader>
 
             </Box>
             <Box>

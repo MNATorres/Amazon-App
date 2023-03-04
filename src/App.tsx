@@ -1,13 +1,13 @@
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
-import Navigation from './components/header/Navigation';
+import Header from './components/header/Header';
 
 
 function App() {
   return (
     <div className="App">
       <ChakraProvider>
-        <Navigation />
+        <Header />
       </ChakraProvider>
     </div>
   );
