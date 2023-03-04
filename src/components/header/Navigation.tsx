@@ -11,16 +11,14 @@ import MenuInput from './MenuInput';
 import InputHeader from './InputHeader';
 import ButtonInputSearch from './ButtonInputSearch';
 import ButtonInput from './ButtonInput';
-import { BsCaretDownFill } from "react-icons/bs";
-
-
+import UserAccount from './UserAccount';
 
 
 
 export default function Navigation() {
 
     return (
-        <Box>
+        <Box >
             <Flex
                 bg={'#131921'}
                 color={'white'}
@@ -32,13 +30,21 @@ export default function Navigation() {
                 borderColor={useColorModeValue('gray.200', 'gray.900')}
                 align={'center'}
                 justifyContent={'space-between'}
+                flexDir={{ base: 'column', md: 'row' }}
+                minWidth={'300px'}
             >
 
-                <Flex>
-                    <img src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695" alt="Logo" style={{ width: "100px" }} />
+                <Flex w={{ base: '100%', md: 'unset', lg: 'unset', xl: 'unset' }} justifyContent={'space-between'} alignItems={'center'}>
+                    <Box w={{base: "21%", md: 'unset', lg: 'unset', xl: 'unset'}}>
+                        <img src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695" alt="Logo" style={{ width: "100px",minWidth: "80px" ,maxHeight: "30.13px" }} />
+                    </Box>
+
+                    <Box display={{ base: 'flex', md: 'none', lg: 'none', xl: 'none' }}>
+                        <UserAccount />
+                    </Box>
                 </Flex>
 
-                <Flex >
+                <Flex display={{ base: 'none', md: 'none', lg: 'flex', xl: 'flex' }} >
                     <ButtonInput>
                         <Box m={'10px 0 0 0'}>
                             <TbMapPin style={{ color: "white", fontSize: '20px' }} />
@@ -49,41 +55,15 @@ export default function Navigation() {
                         </Box>
                     </ButtonInput>
                 </Flex>
-                <Flex w={"60%"} color={"#111"}>
+
+                <Flex mx={'5px'} w={{ base: '100%', md: '60%', lg: '60%', xl: '60%' }} color={"#111"}>
                     <MenuInput />
                     <InputHeader />
                     <ButtonInputSearch />
                 </Flex>
-                <Flex color={"#111"} mx={'1px'}>
-                    <ButtonInput>
-                        <img style={{ width: "25px", margin:'3px' }} src="https://static.vecteezy.com/system/resources/previews/010/870/761/original/american-flag-of-united-states-of-america-png.png" alt="eeuu" />
-                        <Text fontWeight={'bold'} fontSize={'16px'}>
-                            ES
-                        </Text>
-                        <BsCaretDownFill style={{fontSize:'10px', color: "#CCCCCC", marginTop:'5px'}}/>
-                    </ButtonInput>
-                    <ButtonInput>
-                        <Box >
-                            <Text fontSize={'12px'}>
-                                Hola, identificate
-                            </Text>
-                            <Text>
-                                Cuenta y Listas
-                            </Text>
-                        </Box>
-                    </ButtonInput>
-                    <ButtonInput>
-                        <Box >
-                            <Text fontSize={'12px'}>Devoluciones</Text>
-                            <Text>y Pedidos</Text>
-                        </Box>
-                    </ButtonInput>
-                    <ButtonInput>
-                        
-                        <BsCart4 style={{fontSize: '20px', margin:'3px'}} />
-                        Carrito
-                        
-                    </ButtonInput>
+
+                <Flex display={{ base: 'none', md: 'flex', lg: 'flex', xl: 'flex' }} color={"#111"} mx={'1px'}>
+                    <UserAccount />
                 </Flex>
 
             </Flex>

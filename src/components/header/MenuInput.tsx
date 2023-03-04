@@ -11,7 +11,7 @@ import {
 export default function MenuInput() {
     return (
         <Menu>
-            <MenuButton borderRightRadius={'0'} w={"20%"} fontSize={"12px"} as={Button} rightIcon={<ChevronDownIcon />}>
+            <MenuButton display={{ base: 'none', md: 'flex', lg: 'flex', xl: 'flex' }} borderRightRadius={'0'} w={"20%"} minW={'180px'} fontSize={"12px"} as={Button} rightIcon={<ChevronDownIcon />}>
                 Smart Home: Iluminación
             </MenuButton>
             <MenuList>
