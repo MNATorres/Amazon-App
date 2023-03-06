@@ -40,7 +40,7 @@ export default function Navigation() {
                             <MenuMovil />
                         </Box>
                         <Box w={{ base: "21%", md: 'unset', lg: 'unset', xl: 'unset' }}>
-                            <a href="#"><img src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695" alt="Logo" style={{ width: "100px", minWidth: "80px", maxHeight: "30.13px" }} /></a>
+                            <a href="https://www.amazon.com/-/es/gp/browse.html?node=21217035011&ref_=nav_em_sh_lighting_0_2_7_3"><img src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695" alt="Logo" style={{ width: "100px", minWidth: "80px", maxHeight: "30.13px" }} /></a>
                         </Box>
                     </Flex>
                     <Box display={{ base: 'flex', md: 'none', lg: 'none', xl: 'none' }}>

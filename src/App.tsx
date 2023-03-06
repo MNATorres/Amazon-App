@@ -1,6 +1,7 @@
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import Header from './components/header/Header';
+import Main from './components/main/Main';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="App">
       <ChakraProvider>
         <Header />
+        <Main />
       </ChakraProvider>
     </div>
   );
