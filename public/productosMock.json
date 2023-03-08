@@ -1,4 +1,4 @@
-[
+{"cards" :[
     {
         "image": "https://m.media-amazon.com/images/I/41couS+UODL._AC_UL320_.jpg",
         "description": "Smart Plug de Amazon, para la automatización del hogar. Compatible con Alexa, Dispositivo certificado para humanos",
@@ -107,4 +107,4 @@
         "alexa": true,
         "certificationClimate": false
     }
-]
+]}
