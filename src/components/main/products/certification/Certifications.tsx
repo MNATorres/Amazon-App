@@ -17,7 +17,7 @@ import {
 
 import { GrFormDown } from 'react-icons/gr';
 
-
+//{{base:'flex', md:'unset', lg:'unset', xl:'unset'}}
 
 interface propsCertification {
     titleCertification: string;
@@ -27,7 +27,7 @@ interface propsCertification {
 export default function Certifications({ titleCertification, imageCertification }: propsCertification) {
     return (
         <Popover isLazy>
-            <Flex cursor={'pointer'} marginTop={3} alignItems={'center'} _hover={{
+            <Flex cursor={'pointer'} marginTop={{base:'2px', md:3, lg:3, xl:3}} alignItems={'center'} _hover={{
                 textDecoration: 'underline',
             }}>
                 <PopoverTrigger>
@@ -35,7 +35,7 @@ export default function Certifications({ titleCertification, imageCertification 
                 </PopoverTrigger>
 
                 <PopoverTrigger>
-                    <Button h={1} m={0} p={0} bg={'unset'} fontSize={15} _hover={{
+                    <Button h={1} m={0} p={0} bg={'unset'} fontSize={{base:12, md:15, lg:15, xl:15}} _hover={{
                         backgroundColor: 'unset',
                         textDecoration: 'underline'
                     }}>{titleCertification}</Button>

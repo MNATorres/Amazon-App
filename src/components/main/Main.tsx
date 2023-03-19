@@ -4,6 +4,7 @@ import BannerMain from './bannerMain/BannerMain'
 import CardProduct from './products/CardProduct'
 import CountOfPages from './countOfPages/CountOfPages'
 import MenuMain from './menuMain/MenuMain'
+import MoreResults from './moreResults/MoreResults'
 
 export default function Main() {
   return (
@@ -16,6 +17,7 @@ export default function Main() {
                 <BannerMain />
                 <CountOfPages />
                 <CardProduct />
+                <MoreResults />
             </Box>
         </Flex>
     </Box>

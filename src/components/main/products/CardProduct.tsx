@@ -1,18 +1,12 @@
 import {
   Flex,
-  Circle,
   Box,
   Image,
-  Badge,
-  useColorModeValue,
-  Icon,
-  chakra,
-  Tooltip,
   Text
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
-import { CardsResponse, Card } from '../../../services/services';
+import { Card } from '../../../services/services';
 import Certifications from './certification/Certifications';
 
 
@@ -82,36 +76,39 @@ function CardProduct() {
 
   return (
 
-    <Box w={'100%'} display={'flex'} p={0} alignItems="center" justifyContent="center" flexWrap={'wrap'} >
+    <Box  w={'100%'} display={'flex'} p={0} alignItems="center" justifyContent="center" flexWrap={'wrap'} >
       {dataCard.map((element) => {
         return (
 
-          <Flex p={0} w={'18%'} minW={'260px'} alignItems="center" justifyContent="center" mx={1} padding={1} >
+          <Flex   w={{ base: '100%', md: '48%', lg: '45%', xl: '19%' }} minW={'270px'} alignItems="center" justifyContent="center" my={{ base: 1, md: 0, lg: 0, xl: 0 }} mx={{ base: 0, md: 1, lg: 1, xl: 1 }} p={{ base: 0, md: 1, lg: 1, xl: 1 }} >
             <Box
-              maxW="sm"
+              w={'100%'}
               borderWidth="1px"
               rounded="lg"
-              shadow="lg"
-              position="relative">
-              {data.isNew && (
-                <Circle
-                  size="10px"
-                  position="absolute"
-                  top={2}
-                  right={2}
-                  bg="red.200"
-                />
-              )}
+              shadow={{ base: 'unset', md: 'lg', lg: 'lg', xl: 'lg' }}
+              position="relative"
+              display={{ base: 'flex', md: 'unset', lg: 'unset', xl: 'unset' }}
+              fontSize={{ base: 13, md: 16, lg: 16, xl: 16 }}
+              
+            >
+
+
 
               <Image
+              m={'0 auto'}
                 src={element.image}
                 alt={`Picture of ${data.name}`}
                 roundedTop="lg"
-                p={5}
-
+                p={{ base: 1, md: 5, lg: 5, xl: 5 }}
+                objectFit={'contain'}
+                maxH={{ base: '200px', md: 'unset', lg: 'unset', xl: 'unset' }}
+                w={{ base: '40%', md: 'unset', lg: 'unset', xl: 'unset' }}
+                minW={{ base: '40%', md: 'unset', lg: 'unset', xl: 'unset' }}
               />
 
-              <Box p="6">
+
+
+              <Box p={{ base: 2, md: 6, lg: 6, xl: 6 }}>
                 <Flex>
                   <Text>
                     {element.description}
@@ -123,7 +120,7 @@ function CardProduct() {
                   <Rating rating={data.rating} numReviews={element.numComments} />
                 </Flex>
 
-                <Box fontSize="2xl" >
+                <Box fontSize={{ base: 19, md: '2x1', lg: '2x1', xl: '2x1' }} >
                   <Box as="span" color={'gray.600'} fontSize="lg">
                     £
                   </Box>
@@ -134,11 +131,11 @@ function CardProduct() {
                   <Box>{(element.certification === true) ? <Certifications imageCertification='https://m.media-amazon.com/images/I/119eCmXoiWL._SS200_.png' titleCertification='Certificado para humanos' /> : null}</Box>
                   <Box>{(element.alexa === true) ? <Certifications imageCertification='https://m.media-amazon.com/images/I/11hfR5Cq9GL._SS200_.png' titleCertification='Compatible con Alexa' /> : null}</Box>
                   <Box>{(element.certificationClimate === true) ? <Certifications imageCertification='https://m.media-amazon.com/images/I/216-OX9rBaL._SS200_.png' titleCertification='Clima Pledge Friendly' /> : null}</Box>
-                  
                 </Flex>
 
-
               </Box>
+
+
             </Box>
           </Flex>
         )
