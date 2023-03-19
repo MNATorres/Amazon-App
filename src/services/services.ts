@@ -1,6 +1,8 @@
 import './../productosMock.json'
 
 export interface Card {
+  starRatings: number;
+  price: number;
   image: string;
   description: string;
   calification: number;

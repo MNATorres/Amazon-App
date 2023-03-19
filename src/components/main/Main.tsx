@@ -4,7 +4,6 @@ import BannerMain from './bannerMain/BannerMain'
 import CardProduct from './products/CardProduct'
 import CountOfPages from './countOfPages/CountOfPages'
 import MenuMain from './menuMain/MenuMain'
-import Products from './products/Products'
 
 export default function Main() {
   return (
@@ -16,7 +15,7 @@ export default function Main() {
             <Box minW={'350px'} px={{base:1, md:1, lg:2, xl:4}} w={{base:'100%',md:'100%',lg:'88%',xl:'88%'}} className='BannerProducts'>
                 <BannerMain />
                 <CountOfPages />
-                <Products />
+                <CardProduct />
             </Box>
         </Flex>
     </Box>

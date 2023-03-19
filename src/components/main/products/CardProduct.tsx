@@ -12,8 +12,8 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
-import { FiShoppingCart } from 'react-icons/fi';
 import { CardsResponse, Card } from '../../../services/services';
+import Certifications from './certification/Certifications';
 
 
 
@@ -36,25 +36,10 @@ interface RatingProps {
 }
 
 function Rating({ rating, numReviews }: RatingProps) {
-  const [dataCard, setDataCard] = useState<Card[]>([]);
-
-  console.log(dataCard)
-
-
-  useEffect(() => {
-    async function loadCards() {
-      const response = await fetch('/productosMock.json');
-      const data = await response.json();
-      setDataCard(data.cards);
-    }
-    loadCards();
-  }, []);
-
-
 
   return (
-    
-    <Box display={"flex"} alignItems={"center"}>
+
+    <Box display={"flex"} alignItems={"center"} >
       {Array(5)
         .fill('')
         .map((_, i) => {
@@ -81,80 +66,87 @@ function Rating({ rating, numReviews }: RatingProps) {
 }
 
 function CardProduct() {
+  const [dataCard, setDataCard] = useState<Card[]>([]);
+
+  console.log(dataCard)
+
+
+  useEffect(() => {
+    async function loadCards() {
+      const response = await fetch('/productosMock.json');
+      const data = await response.json();
+      setDataCard(data.cards);
+    }
+    loadCards();
+  }, []);
+
   return (
-    <Flex p={50} w={'xl'} alignItems="center" justifyContent="center">
-      <Box
-        bg={useColorModeValue('white', 'gray.800')}
-        maxW="sm"
-        borderWidth="1px"
-        rounded="lg"
-        shadow="lg"
-        position="relative">
-        {data.isNew && (
-          <Circle
-            size="10px"
-            position="absolute"
-            top={2}
-            right={2}
-            bg="red.200"
-          />
-        )}
 
-        <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
-          roundedTop="lg"
-        />
+    <Box w={'100%'} display={'flex'} p={0} alignItems="center" justifyContent="center" flexWrap={'wrap'} >
+      {dataCard.map((element) => {
+        return (
 
-        <Box p="6">
-          <Box display={"flex"} alignItems={"baseline"}>
-            {data.isNew && (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                New
-              </Badge>
-            )}
-          </Box>
-
-          <Flex mt="1" justifyContent="space-between" alignContent="center">
+          <Flex p={0} w={'18%'} minW={'260px'} alignItems="center" justifyContent="center" mx={1} padding={1} >
             <Box
-              fontSize="2xl"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              isTruncated>
-              {data.name}
-            </Box>
-            <Tooltip
-              label="Add to cart"
-              bg="white"
-              placement={'top'}
-              color={'gray.800'}
-              fontSize={'1.2em'}>
-              <chakra.a href={'#'} display={'flex'}>
-                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-              </chakra.a>
-            </Tooltip>
-          </Flex>
-          <Flex>
-            <Text>
-              {data.description}
-              
-            </Text>
-          </Flex>
+              maxW="sm"
+              borderWidth="1px"
+              rounded="lg"
+              shadow="lg"
+              position="relative">
+              {data.isNew && (
+                <Circle
+                  size="10px"
+                  position="absolute"
+                  top={2}
+                  right={2}
+                  bg="red.200"
+                />
+              )}
 
-          <Flex justifyContent="space-between" alignContent="center">
-            <Rating rating={data.rating} numReviews={data.numReviews} />
-            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-              <Box as="span" color={'gray.600'} fontSize="lg">
-                £
+              <Image
+                src={element.image}
+                alt={`Picture of ${data.name}`}
+                roundedTop="lg"
+                p={5}
+
+              />
+
+              <Box p="6">
+                <Flex>
+                  <Text>
+                    {element.description}
+                  </Text>
+                </Flex>
+
+                <Flex alignContent="center" alignItems={'center'}>
+                  <Box mx={2}>{element.starRatings}</Box>
+                  <Rating rating={data.rating} numReviews={element.numComments} />
+                </Flex>
+
+                <Box fontSize="2xl" >
+                  <Box as="span" color={'gray.600'} fontSize="lg">
+                    £
+                  </Box>
+                  {element.price.toFixed(2)}
+                </Box>
+
+                <Flex flexDir={'column'}>
+                  <Box>{(element.certification === true) ? <Certifications imageCertification='https://m.media-amazon.com/images/I/119eCmXoiWL._SS200_.png' titleCertification='Certificado para humanos' /> : null}</Box>
+                  <Box>{(element.alexa === true) ? <Certifications imageCertification='https://m.media-amazon.com/images/I/11hfR5Cq9GL._SS200_.png' titleCertification='Compatible con Alexa' /> : null}</Box>
+                  <Box>{(element.certificationClimate === true) ? <Certifications imageCertification='https://m.media-amazon.com/images/I/216-OX9rBaL._SS200_.png' titleCertification='Clima Pledge Friendly' /> : null}</Box>
+                  
+                </Flex>
+
+
               </Box>
-              {data.price.toFixed(2)}
             </Box>
           </Flex>
-        </Box>
-      </Box>
-    </Flex>
+        )
+      })}
+    </Box>
   );
+
 }
+
 
 export default CardProduct;
