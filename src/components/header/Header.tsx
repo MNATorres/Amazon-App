@@ -1,6 +1,6 @@
 import React from 'react'
-import Navigation from './Navigation'
-import NavMain from './NavMain'
+import Navigation from './componentHeader/Navigation'
+import NavMain from './componentHeader/NavMain'
 
 export default function Header() {
   return (
