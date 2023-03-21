@@ -1,11 +1,12 @@
-import { Box,Flex, Text, Link } from '@chakra-ui/react'
+import { Box, Flex, Text, Link } from '@chakra-ui/react'
 import React from 'react'
+import LinkFooterMovil from './LinkFooterMovil'
 import LinkStyle from './LinkStyle'
 
 export default function LinksFooter() {
   return (
     <Flex bg={'#232f3e'} width={'100%'} justifyContent={'center'}>
-      <Flex w={'100%'} maxW={'1000px'} justifyContent={'space-between'} py={5}>
+      <Flex w={'100%'} maxW={'1000px'} justifyContent={'space-between'} py={5} display={{ base: 'none', md: 'none', lg: 'flex', xl: 'flex' }}>
 
         <Flex flexDirection={'column'} maxW={'15%'}>
           <Text fontWeight={'bold'}>Conócenos</Text>
@@ -47,7 +48,26 @@ export default function LinksFooter() {
           <LinkStyle titleLink='Ayuda' />
 
         </Flex>
+      </Flex>
 
+      <Flex w={'100%'} justifyContent={'space-around'} p={3} display={{ base: 'flex', md: 'flex', lg: 'none', xl: 'none' }}>
+        <Flex flexDirection={'column'} w={'40%'} >
+          <LinkFooterMovil titleLinkMovil='Inicio' />
+          <LinkFooterMovil titleLinkMovil='Tus Listas' />
+          <LinkFooterMovil titleLinkMovil='Encuentra un regalo' />
+          <LinkFooterMovil titleLinkMovil='Tus articulos vistos recientemente' />
+          <LinkFooterMovil titleLinkMovil='Devoluciones' />
+        </Flex>
+
+        <Flex flexDirection={'column'} w={'40%'} >
+          <LinkFooterMovil titleLinkMovil='Tus Pedios' />
+          <LinkFooterMovil titleLinkMovil='Tarjetas y Listas de Regalo' />
+          <LinkFooterMovil titleLinkMovil='Tu Cuenta' />
+          <LinkFooterMovil titleLinkMovil='Vender Productos en Amazon' />
+          <LinkFooterMovil titleLinkMovil='Tus retiros y alertas de seguridad del producto' />
+          <LinkFooterMovil titleLinkMovil='Atencion al Cliente' />
+        </Flex>
+        
       </Flex>
     </Flex>
   )
