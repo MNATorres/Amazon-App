@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/amazon-app/static/css/main.31d6cfe0.css",
-    "main.js": "/amazon-app/static/js/main.271732cd.js",
-    "index.html": "/amazon-app/index.html",
-    "main.271732cd.js.map": "/amazon-app/static/js/main.271732cd.js.map"
+    "main.css": "/Amazon-App/static/css/main.31d6cfe0.css",
+    "main.js": "/Amazon-App/static/js/main.271732cd.js",
+    "index.html": "/Amazon-App/index.html",
+    "main.271732cd.js.map": "/Amazon-App/static/js/main.271732cd.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
